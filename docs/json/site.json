@@ -190,13 +190,13 @@
       "name": "MTeam",
       "type": "gw",
       "temple": "NexusPHP",
-      "search_prefix": "https://tp.m-team.cc/torrents.php?search="
+      "search_prefix": "https://pt.m-team.cc/torrents.php?search="
     },
     {
       "name": "MTeam(Adult)",
       "type": "gw",
       "temple": "NexusPHP",
-      "search_prefix": "https://tp.m-team.cc/adult.php?search="
+      "search_prefix": "https://pt.m-team.cc/adult.php?search="
     },
     {
       "name": "GZTown",
