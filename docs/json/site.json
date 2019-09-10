@@ -257,6 +257,30 @@
       "type": "gw",
       "temple": "HDRoute",
       "search_prefix": "http://hdroute.org/browse.php?s="
+    },
+    {
+      "name": "HDArea",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://www.hdarea.co/torrents.php?search="
+    },
+    {
+      "name": "PTer",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://pter.club/torrents.php?search="
+    },
+    {
+      "name": "PTDream",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://www.ptdream.net/torrents.php?search="
+    },
+    {
+      "name": "SSD",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://springsunday.net/torrents.php?search="
     }
   ],
   "jyw": [
@@ -290,7 +314,6 @@
     "KeepFrds",
     "TCCF",
     "U2",
-    "CMCT",
     "MTeam",
     "MTeam(Adult)",
     "GZTown",
@@ -302,12 +325,16 @@
     "HD4FANS",
     "TLFBits",
     "BTSCHOOL",
-    "HDRoute"
+    "HDRoute",
+    "HDArea",
+    "PTer",
+    "PTDream",
+    "SSD"
   ],
   "wz": [],
   "bt": [],
   "disable": [
-    "6V",
+    "CMCT",
     "HIT",
     "CUGB",
     "Antsoul"
