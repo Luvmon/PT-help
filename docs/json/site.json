@@ -250,7 +250,7 @@
       "name": "BTSCHOOL",
       "type": "gw",
       "temple": "NexusPHP",
-      "search_prefix": "http://pt.btschool.net/torrents.php?search="
+      "search_prefix": "http://pt.btschool.club/torrents.php?search="
     },
     {
       "name": "HDRoute",
