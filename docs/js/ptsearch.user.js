@@ -542,7 +542,6 @@ $(document).ready(function () {
         // TODO Nyaa(sukebei)
 
         // 自定义站点请添加到此处
-        
         NexusPHP("HDArea", "https://www.hdarea.co/torrents.php?search=$key$");
         NexusPHP("PTer", "https://pter.club/torrents.php?search=$key$");
         NexusPHP("PTDream", "https://www.ptdream.net/torrents.php?search=$key$");
