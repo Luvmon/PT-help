@@ -277,6 +277,24 @@
       "search_prefix": "https://www.ptdream.net/torrents.php?search="
     },
     {
+      "name": "SoulVoice",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://pt.soulvoice.club/torrents.php?search="
+    },
+    {
+      "name": "SoulVoice(eBook)",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://pt.soulvoice.club/live.php?search="
+    },
+    {
+      "name": "Eden",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://pt.hdbd.us/torrents.php?search="
+    },
+    {
       "name": "SSD",
       "type": "gw",
       "temple": "NexusPHP",
@@ -330,6 +348,9 @@
     "HDArea",
     "PTer",
     "PTDream",
+    "SoulVoice",
+    "SoulVoice(eBook)",
+    "Eden",
     "SSD"
   ],
   "wz": [],
