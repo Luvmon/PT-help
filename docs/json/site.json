@@ -271,10 +271,16 @@
       "search_prefix": "https://pter.club/torrents.php?search="
     },
     {
-      "name": "PTDream",
+      "name": "PTHome",
       "type": "gw",
       "temple": "NexusPHP",
-      "search_prefix": "https://www.ptdream.net/torrents.php?search="
+      "search_prefix": "https://www.pthome.net/torrents.php?search="
+    },
+    {
+      "name": "HDDolby",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://www.hddolby.com/torrents.php?search="
     },
     {
       "name": "SoulVoice",
@@ -347,7 +353,8 @@
     "HDRoute",
     "HDArea",
     "PTer",
-    "PTDream",
+    "PTHome",
+    "HDDolby",
     "SoulVoice",
     "SoulVoice(eBook)",
     "Eden",
