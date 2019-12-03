@@ -1,3 +1,5 @@
+2019.12.03 新增PTHome，PTDream改名为HD Dolby
+
 新增站点：HDArea PTer PTDream SoulVoice Garden-of-Eden SSD(原CMCT)
 
 修改网址：MTeam BTSCHOOL
