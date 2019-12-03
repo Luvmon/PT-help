@@ -544,7 +544,8 @@ $(document).ready(function () {
         // 自定义站点请添加到此处
         NexusPHP("HDArea", "https://www.hdarea.co/torrents.php?search=$key$");
         NexusPHP("PTer", "https://pter.club/torrents.php?search=$key$");
-        NexusPHP("PTDream", "https://www.ptdream.net/torrents.php?search=$key$");
+        NexusPHP("PTHome", "https://www.pthome.net/torrents.php?search=$key$");
+        NexusPHP("HDDolby", "https://www.hddolby.com/torrents.php?search=$key$");
         NexusPHP("SoulVoice", "https://pt.soulvoice.club/torrents.php?search=$key$");
         NexusPHP("SoulVoice(eBook)", "https://pt.soulvoice.club/live.php?search=$key$");
         NexusPHP("Eden", "https://pt.hdbd.us/torrents.php?search=$key$");
