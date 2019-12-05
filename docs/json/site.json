@@ -223,6 +223,12 @@
       "search_prefix": "http://hdstreet.club/torrents.php?search="
     },
     {
+      "name": "HDStreet(Foreign)",
+      "type": "gw",
+      "temple": "HDStreet",
+      "search_prefix": "https://hdstreet.club/torrentsasia.php?search="
+    },
+    {
       "name": "HDCity",
       "type": "gw",
       "temple": "HDCity",
@@ -345,6 +351,7 @@
     "TTG(Media)",
     "TTG(Gamez)",
     "HDStreet",
+    "HDStreet(Foreign)",
     "HDCity",
     "CCFBits",
     "HD4FANS",
