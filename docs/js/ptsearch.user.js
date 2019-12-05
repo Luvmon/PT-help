@@ -341,7 +341,7 @@ $(document).ready(function () {
                     table_append({
                         "site": site,
                         "name": _tag_name.text(),
-                        "link": "https://hdcity.work/" + _tag_name.attr("href"),
+                        "link": "https://hdcity.city/" + _tag_name.attr("href"),
                         "pubdate": Date.parse(_date),
                         "size": FileSizetoLength(_size),
                         "seeders": _tag_seeders.text().replace(',', '') || 0,
@@ -527,7 +527,7 @@ $(document).ready(function () {
         TTG("TTG(Media)", "https://totheglory.im/browse.php?c=M&search_field=$key$");
         TTG("TTG(Gamez)", "https://totheglory.im/browse.php?c=G&search_field=$key$");
 
-        HDCity("HDCity", "https://hdcity.work/pt?iwannaseethis=$key$");
+        HDCity("HDCity", "https://hdcity.city/pt?iwannaseethis=$key$");
         HDStreet("HDStreet", "http://hdstreet.club/torrents.php?search=$key$");
         HDRoute("HDRoute", "http://hdroute.org/browse.php?s=$key$&dp=0&add=0&action=s&or=1&imdb=");
         CCFBits("CCFBits", "http://ccfbits.org/browse.php?search=$key$");
