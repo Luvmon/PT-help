@@ -520,7 +520,7 @@ $(document).ready(function () {
         NexusPHP("GZTown", "https://pt.gztown.net/torrents.php?search=$key$");
         NexusPHP("HD4FANS", "https://pt.hd4fans.org/torrents.php?search=$key$");
         NexusPHP("TLFBits", "http://pt.eastgame.org/torrents.php?search=$key$");
-        NexusPHP("BTSCHOOL", "http://pt.btschool.net/torrents.php?search=$key$");
+        NexusPHP("BTSCHOOL", "http://pt.btschool.club/torrents.php?search=$key$");
 
         // 公网不能使用通用NexusPHP解析的站点
         HDChina("HDChina", "https://hdchina.org/torrents.php?search=$key$");
