@@ -529,6 +529,7 @@ $(document).ready(function () {
 
         HDCity("HDCity", "https://hdcity.city/pt?iwannaseethis=$key$");
         HDStreet("HDStreet", "http://hdstreet.club/torrents.php?search=$key$");
+        HDStreet("HDStreet(Foreign)", "https://hdstreet.club/torrentsasia.php?search=$key$");
         HDRoute("HDRoute", "http://hdroute.org/browse.php?s=$key$&dp=0&add=0&action=s&or=1&imdb=");
         CCFBits("CCFBits", "http://ccfbits.org/browse.php?search=$key$");
 
