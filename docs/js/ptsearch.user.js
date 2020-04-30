@@ -551,6 +551,7 @@ $(document).ready(function () {
         NexusPHP("SoulVoice(eBook)", "https://pt.soulvoice.club/live.php?search=$key$");
         NexusPHP("Eden", "https://pt.hdbd.us/torrents.php?search=$key$");
         NexusPHP("SSD", "https://springsunday.net/torrents.php?search=$key$");
+        NexusPHP("PTSBAO", "https://ptsbao.club/torrents.php?search=$key$");
 
 
     });
