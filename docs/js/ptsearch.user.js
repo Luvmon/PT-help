@@ -130,8 +130,6 @@ $(document).ready(function () {
 
         // 通用处理模板，如果默认解析模板可以解析该站点则请不要自建解析方法
         // NexusPHP类站点通用
-        /*
-        // 原始程序
         function NexusPHP(site, search_prefix, torrent_table_selector) {
             Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
                 var url_prefix = /pt\.whu\.edu\.cn|whupt\.net|hudbt\.hust\.edu\.cn/.test(res.finalUrl) ? "" : (res.finalUrl.match(/(https?:\/\/[^\/]+?\/).+/) || ['', ''])[1];
@@ -174,56 +172,6 @@ $(document).ready(function () {
                 }
             });
         }
-        */
-        
-        // 自写程序，通用模板，原始程序对PTer站点没有用，显示不出"name"
-        // NexusPHP类站点通用
-        function NexusPHP(site, search_prefix, torrent_table_selector) {
-            Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
-                var url_prefix = /pt\.whu\.edu\.cn|whupt\.net|hudbt\.hust\.edu\.cn/.test(res.finalUrl) ? "" : (res.finalUrl.match(/(https?:\/\/[^\/]+?\/).+/) || ['', ''])[1];
-                writelog("Using The normal parser for NexusPHP in Site: " + site);
-                if (/没有种子|No [Tt]orrents?|Your search did not match anything|用准确的关键字重试/.test(res.responseText)) {
-                    writelog("No any torrent find in Site " + site + ".");
-                    return;
-                }
-                var tr_list = page.find(torrent_table_selector || "table.torrents:last > tbody > tr:gt(0)");
-                writelog("Get " + tr_list.length + " records in Site " + site + ".");
-                for (var i = 0; i < tr_list.length; i++) {
-                    var torrent_data_raw = tr_list.eq(i);
-                    // 只修改了下面一行
-                    // var _tag_name = torrent_data_raw.find("a[href*='hit']").first();
-                    var _tag_name = torrent_data_raw.find("a[href*='details']").first();
-
-                    // 确定日期tag，因用户在站点设置中配置及站点优惠信息的情况的存在，此处dom结构会有不同
-                    // 此外多数站点对于 seeders, leechers, completed 没有额外的定位信息，故要依赖于正确的日期tag
-                    var _tag_date, _date = "0000-00-00 00:00:00";
-                    _tag_date = torrent_data_raw.find("> td").filter(function () {
-                        return /(\d{4}-\d{2}-\d{2}[^\d]+?\d{2}:\d{2}:\d{2})|[分时天月年]/.test($(this).html());
-                    }).last();
-                    if (_tag_date && _tag_date.html()) {
-                        _date = (_tag_date.html().match(time_regex) || ["", "0000-00-00 00:00:00"])[1].replace(time_regen_replace, "-$1 $2:");
-                    }
-
-                    var _tag_size = _tag_date.next("td");
-                    var _tag_seeders = _tag_size.next("td");  // torrent_data_raw.find("a[href$='#seeders']")
-                    var _tag_leechers = _tag_seeders.next("td");  // torrent_data_raw.find("a[href$='#leechers']")
-                    var _tag_completed = _tag_leechers.next("td");  // torrent_data_raw.find("a[href^='viewsnatches']")
-
-                    table_append({
-                        "site": site,
-                        "name": _tag_name.attr("title") || _tag_name.text(),
-                        "link": url_prefix + _tag_name.attr("href"),
-                        "pubdate": Date.parse(_date),
-                        "size": FileSizetoLength(_tag_size.text()),
-                        "seeders": _tag_seeders.text().replace(',', '') || 0,  // 获取不到正常信息的时候置0
-                        "leechers": _tag_leechers.text().replace(',', '') || 0,
-                        "completed": _tag_completed.text().replace(',', '') || 0
-                    });
-                }
-            });
-        }
-        
-        
 
         // 特殊站点处理逻辑
         function TTG(site, search_prefix) {  // TTG : https://totheglory.im/
@@ -535,6 +483,55 @@ $(document).ready(function () {
 
         }
 
+        
+        // 自添加模板，NexusPHP通用模板对PTer站点没有用，显示不出"name"
+        function PTer(site, search_prefix, torrent_table_selector) {
+            Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
+                var url_prefix = /pt\.whu\.edu\.cn|whupt\.net|hudbt\.hust\.edu\.cn/.test(res.finalUrl) ? "" : (res.finalUrl.match(/(https?:\/\/[^\/]+?\/).+/) || ['', ''])[1];
+                writelog("Using The normal parser for NexusPHP in Site: " + site);
+                if (/没有种子|No [Tt]orrents?|Your search did not match anything|用准确的关键字重试/.test(res.responseText)) {
+                    writelog("No any torrent find in Site " + site + ".");
+                    return;
+                }
+                var tr_list = page.find(torrent_table_selector || "table.torrents:last > tbody > tr:gt(0)");
+                writelog("Get " + tr_list.length + " records in Site " + site + ".");
+                for (var i = 0; i < tr_list.length; i++) {
+                    var torrent_data_raw = tr_list.eq(i);
+                    // PTer模板相对于NexusPHP原始模板只修改了下面一行
+                    // var _tag_name = torrent_data_raw.find("a[href*='hit']").first();
+                    var _tag_name = torrent_data_raw.find("a[href*='details']").first();
+
+                    // 确定日期tag，因用户在站点设置中配置及站点优惠信息的情况的存在，此处dom结构会有不同
+                    // 此外多数站点对于 seeders, leechers, completed 没有额外的定位信息，故要依赖于正确的日期tag
+                    var _tag_date, _date = "0000-00-00 00:00:00";
+                    _tag_date = torrent_data_raw.find("> td").filter(function () {
+                        return /(\d{4}-\d{2}-\d{2}[^\d]+?\d{2}:\d{2}:\d{2})|[分时天月年]/.test($(this).html());
+                    }).last();
+                    if (_tag_date && _tag_date.html()) {
+                        _date = (_tag_date.html().match(time_regex) || ["", "0000-00-00 00:00:00"])[1].replace(time_regen_replace, "-$1 $2:");
+                    }
+
+                    var _tag_size = _tag_date.next("td");
+                    var _tag_seeders = _tag_size.next("td");  // torrent_data_raw.find("a[href$='#seeders']")
+                    var _tag_leechers = _tag_seeders.next("td");  // torrent_data_raw.find("a[href$='#leechers']")
+                    var _tag_completed = _tag_leechers.next("td");  // torrent_data_raw.find("a[href^='viewsnatches']")
+
+                    table_append({
+                        "site": site,
+                        "name": _tag_name.attr("title") || _tag_name.text(),
+                        "link": url_prefix + _tag_name.attr("href"),
+                        "pubdate": Date.parse(_date),
+                        "size": FileSizetoLength(_tag_size.text()),
+                        "seeders": _tag_seeders.text().replace(',', '') || 0,  // 获取不到正常信息的时候置0
+                        "leechers": _tag_leechers.text().replace(',', '') || 0,
+                        "completed": _tag_completed.text().replace(',', '') || 0
+                    });
+                }
+            });
+        }
+        
+        
+
         // 开始各站点遍历
         writelog("Script Version: " + script_version + ", Choose Site List: " + search_site.toString() + ", With Search Keywords: " + search_text);
         // 教育网通用模板解析
@@ -596,7 +593,7 @@ $(document).ready(function () {
 
         // 自定义站点请添加到此处
         NexusPHP("HDArea", "https://www.hdarea.co/torrents.php?search=$key$");
-        NexusPHP("PTer", "https://pterclub.com/torrents.php?search=$key$");
+        PTer("PTer", "https://pterclub.com/torrents.php?search=$key$");
         NexusPHP("PTHome", "https://www.pthome.net/torrents.php?search=$key$");
         NexusPHP("HDDolby", "https://www.hddolby.com/torrents.php?search=$key$");
         NexusPHP("SoulVoice", "https://pt.soulvoice.club/torrents.php?search=$key$");
