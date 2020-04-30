@@ -1,3 +1,7 @@
+## 更新日志：
+
+2020.04.30 新增pt烧包（PTSBAO），并增加适用于PTer站点的模板（NexusPHP模板对该站点没有用）
+
 2019.12.03 新增PTHome，PTDream改名为HD Dolby
 
 新增站点：HDArea PTer PTDream SoulVoice Garden-of-Eden SSD(原CMCT)
