@@ -311,6 +311,12 @@
       "type": "gw",
       "temple": "NexusPHP",
       "search_prefix": "https://springsunday.net/torrents.php?search="
+    },
+    {
+      "name": "PTSBAO",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://ptsbao.club/torrents.php?search="
     }
   ],
   "jyw": [
@@ -365,7 +371,8 @@
     "SoulVoice",
     "SoulVoice(eBook)",
     "Eden",
-    "SSD"
+    "SSD",
+    "PTSBAO"
   ],
   "wz": [],
   "bt": [],
