@@ -546,27 +546,36 @@ $(document).ready(function () {
                 var tr_list = page.find(torrent_table_selector || "table.torrents:last > tbody > tr:gt(1)");
                 writelog("Get " + tr_list.length + " records in Site " + site + ".");
                 // 每两行是一个种子
-                // for (var i = 0; i < tr_list.length; i+=2) {
-                for (var i = 0; i < tr_list.length; i++) {
+                // for (var i = 0; i < tr_list.length; i++) {
+                for (var i = 0; i < tr_list.length; i+=2) {
                     var torrent_data_raw = tr_list.eq(i);
-                    // PTer模板相对于NexusPHP原始模板只修改了下面一行
+                    var torrent_data_raw_next = tr_list.eq(i+1);
                     // var _tag_name = torrent_data_raw.find("a[href*='hit']").first();
                     var _tag_name = torrent_data_raw.find("a[href*='details']").first();
 
                     // 确定日期tag，因用户在站点设置中配置及站点优惠信息的情况的存在，此处dom结构会有不同
                     // 此外多数站点对于 seeders, leechers, completed 没有额外的定位信息，故要依赖于正确的日期tag
                     var _tag_date, _date = "0000-00-00 00:00:00";
-                    _tag_date = torrent_data_raw.find("> td").filter(function () {
+                    // 下一行torrent_data_raw换成torrent_data_raw_next
+                    _tag_date = torrent_data_raw_next.find("> td").filter(function () {
                         return /(\d{4}-\d{2}-\d{2}[^\d]+?\d{2}:\d{2}:\d{2})|[分时天月年]/.test($(this).html());
                     }).last();
                     if (_tag_date && _tag_date.html()) {
                         _date = (_tag_date.html().match(time_regex) || ["", "0000-00-00 00:00:00"])[1].replace(time_regen_replace, "-$1 $2:");
                     }
 
+                    /*
+                    // 原程序
                     var _tag_size = _tag_date.next("td");
                     var _tag_seeders = _tag_size.next("td");  // torrent_data_raw.find("a[href$='#seeders']")
                     var _tag_leechers = _tag_seeders.next("td");  // torrent_data_raw.find("a[href$='#leechers']")
                     var _tag_completed = _tag_leechers.next("td");  // torrent_data_raw.find("a[href^='viewsnatches']")
+                    */
+                    
+                    var _tag_size = _tag_date.next("td");
+                    var _tag_seeders = torrent_data_raw.find("a[href$='#seeders']")
+                    var _tag_leechers = torrent_data_raw.find("a[href$='#leechers']")
+                    var _tag_completed = torrent_data_raw.find("a[href^='viewsnatches']")
 
                     table_append({
                         "site": site,
