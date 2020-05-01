@@ -545,8 +545,9 @@ $(document).ready(function () {
                 // var tr_list = page.find(torrent_table_selector || "table.torrents:last > tbody > tr:gt(0)");
                 var tr_list = page.find(torrent_table_selector || "table.torrents:last > tbody > tr:gt(1)");
                 writelog("Get " + tr_list.length + " records in Site " + site + ".");
-                // for (var i = 0; i < tr_list.length; i++) {
-                for (var i = 0; i < tr_list.length; i+=2) {
+                // 每两行是一个种子
+                for (var i = 0; i < tr_list.length; i++) {
+                // for (var i = 0; i < tr_list.length; i+=2) {
                     var torrent_data_raw = tr_list.eq(i);
                     // PTer模板相对于NexusPHP原始模板只修改了下面一行
                     // var _tag_name = torrent_data_raw.find("a[href*='hit']").first();
