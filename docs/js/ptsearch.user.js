@@ -601,6 +601,7 @@ $(document).ready(function () {
         NexusPHP("Eden", "https://pt.hdbd.us/torrents.php?search=$key$");
         NexusPHP("SSD", "https://springsunday.net/torrents.php?search=$key$");
         NexusPHP("PTSBAO", "https://ptsbao.club/torrents.php?search=$key$");
+        NexusPHP("MoeCat", "https://moecat.best/torrents.php?search=$key$");
 
 
     });
