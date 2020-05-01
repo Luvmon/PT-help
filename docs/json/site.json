@@ -317,6 +317,12 @@
       "type": "gw",
       "temple": "NexusPHP",
       "search_prefix": "https://ptsbao.club/torrents.php?search="
+    },
+    {
+      "name": "MoeCat",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://moecat.best/torrents.php?search="
     }
   ],
   "jyw": [
@@ -372,7 +378,8 @@
     "SoulVoice(eBook)",
     "Eden",
     "SSD",
-    "PTSBAO"
+    "PTSBAO",
+    "MoeCat"
   ],
   "wz": [],
   "bt": [],
