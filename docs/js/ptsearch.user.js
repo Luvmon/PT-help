@@ -540,15 +540,16 @@ $(document).ready(function () {
                     writelog("No any torrent find in Site " + site + ".");
                     return;
                 }
-                
-                // 该站搜索的每个种子都有两个tr列表表示，下面代码":gt(index)"表示去除前两个tr
+                // 与NexusPHP通用模板相比修改了下面几处地方：
+                // 第一处：该站搜索的每个种子都有两个tr列表表示，下面代码":gt(index)"表示去除前两个tr
                 // var tr_list = page.find(torrent_table_selector || "table.torrents:last > tbody > tr:gt(0)");
                 var tr_list = page.find(torrent_table_selector || "table.torrents:last > tbody > tr:gt(1)");
                 writelog("Get " + tr_list.length + " records in Site " + site + ".");
-                // 每两行是一个种子
+                // 第二处：每两行是一个种子
                 // for (var i = 0; i < tr_list.length; i++) {
                 for (var i = 0; i < tr_list.length; i+=2) {
                     var torrent_data_raw = tr_list.eq(i);
+                    // 第三处：增加下面一行代码
                     var torrent_data_raw_next = tr_list.eq(i+1);
                     // var _tag_name = torrent_data_raw.find("a[href*='hit']").first();
                     var _tag_name = torrent_data_raw.find("a[href*='details']").first();
@@ -556,7 +557,7 @@ $(document).ready(function () {
                     // 确定日期tag，因用户在站点设置中配置及站点优惠信息的情况的存在，此处dom结构会有不同
                     // 此外多数站点对于 seeders, leechers, completed 没有额外的定位信息，故要依赖于正确的日期tag
                     var _tag_date, _date = "0000-00-00 00:00:00";
-                    // 下一行torrent_data_raw换成torrent_data_raw_next
+                    // 第四处：下一行torrent_data_raw换成torrent_data_raw_next
                     _tag_date = torrent_data_raw_next.find("> td").filter(function () {
                         return /(\d{4}-\d{2}-\d{2}[^\d]+?\d{2}:\d{2}:\d{2})|[分时天月年]/.test($(this).html());
                     }).last();
@@ -564,6 +565,7 @@ $(document).ready(function () {
                         _date = (_tag_date.html().match(time_regex) || ["", "0000-00-00 00:00:00"])[1].replace(time_regen_replace, "-$1 $2:");
                     }
 
+                    // 第五处：
                     /*
                     // 原程序
                     var _tag_size = _tag_date.next("td");
@@ -571,11 +573,10 @@ $(document).ready(function () {
                     var _tag_leechers = _tag_seeders.next("td");  // torrent_data_raw.find("a[href$='#leechers']")
                     var _tag_completed = _tag_leechers.next("td");  // torrent_data_raw.find("a[href^='viewsnatches']")
                     */
-                    
                     var _tag_size = _tag_date.next("td");
                     var _tag_seeders = torrent_data_raw.find("a[href$='#seeders']")
                     var _tag_leechers = torrent_data_raw.find("a[href$='#leechers']")
-                    var _tag_completed = torrent_data_raw.find("a[href^='viewsnatches']")
+                    var _tag_completed = torrent_data_raw.find("a[href^='viewsnatches']").first()
 
                     table_append({
                         "site": site,
