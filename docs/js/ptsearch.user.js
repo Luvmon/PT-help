@@ -344,7 +344,8 @@ $(document).ready(function () {
                         "link": "https://hdcity.city/" + _tag_name.attr("href"),
                         "pubdate": Date.parse(_date),
                         "size": FileSizetoLength(_size),
-                        "seeders": _tag_seeders.text().replace(',', '') || 0,
+                        // "seeders": _tag_seeders.text().replace(',', '') || 0,
+                        "seeders": _tag_seeders.text() || 0,
                         "leechers": _tag_leechers.text().replace(',', '') || 0,
                         "completed": _tag_completed.text().replace(',', '') || 0
                     });
