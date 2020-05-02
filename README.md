@@ -1,6 +1,6 @@
 ### 更新日志：
 
-2020.05.02 新增LeagueHD(柠檬)
+2020.05.02 新增LeagueHD(柠檬)，修改HDCity模板中"seeders"、"leechers"和"completed"的显示问题
 
 2020.05.01 新增MoeCat，以及适用于该站点的模板
 
