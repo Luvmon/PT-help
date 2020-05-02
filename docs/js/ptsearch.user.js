@@ -345,7 +345,7 @@ $(document).ready(function () {
                         "pubdate": Date.parse(_date),
                         "size": FileSizetoLength(_size),
                         // "seeders": _tag_seeders.text().replace(',', '') || 0, 
-                        "seeders": _tag_seeders.text().replace(',', '')[12:] || 0,
+                        "seeders": _tag_seeders.text().replace(',', '').substring(12) || 0,
                         "leechers": _tag_leechers.text().replace(',', '') || 0,
                         "completed": _tag_completed.text().replace(',', '') || 0
                     });
