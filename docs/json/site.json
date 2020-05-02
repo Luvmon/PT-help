@@ -323,6 +323,12 @@
       "type": "gw",
       "temple": "NexusPHP",
       "search_prefix": "https://moecat.best/torrents.php?search="
+    },
+    {
+      "name": "LeagueHD",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://leaguehd.com/torrents.php?search="
     }
   ],
   "jyw": [
@@ -379,7 +385,8 @@
     "Eden",
     "SSD",
     "PTSBAO",
-    "MoeCat"
+    "MoeCat",
+    "LeagueHD"
   ],
   "wz": [],
   "bt": [],
