@@ -667,6 +667,7 @@ $(document).ready(function () {
         NexusPHP("PTSBAO", "https://ptsbao.club/torrents.php?search=$key$");
         MoeCat("MoeCat", "https://moecat.best/torrents.php?search=$key$");
         NexusPHP("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
+        NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
 
 
     });
