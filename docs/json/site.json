@@ -329,6 +329,12 @@
       "type": "gw",
       "temple": "NexusPHP",
       "search_prefix": "https://leaguehd.com/torrents.php?search="
+    },
+    {
+      "name": "HDFans",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://hdfans.org/torrents.php?search="
     }
   ],
   "jyw": [
@@ -386,7 +392,8 @@
     "SSD",
     "PTSBAO",
     "MoeCat",
-    "LeagueHD"
+    "LeagueHD",
+    "HDFans"
   ],
   "wz": [],
   "bt": [],
