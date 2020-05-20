@@ -342,6 +342,12 @@
       "type": "wz",
       "temple": "Gazelle",
       "search_prefix": "https://www.empornium.me/torrents.php?search="
+    },
+    {
+      "name": "MTV",
+      "type": "wz",
+      "temple": "Gazelle",
+      "search_prefix": "https://www.morethan.tv/torrents.php?search="
     }
   ],
   "jyw": [
@@ -403,7 +409,8 @@
   ],
   "wz": [
     "AvGv",
-    "Empornium"
+    "Empornium",
+    "MTV"
   ],
   "bt": [],
   "disable": [
