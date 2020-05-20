@@ -728,7 +728,7 @@ $(document).ready(function () {
         NexusPHP("KeepFrds", "https://pt.keepfrds.com/torrents.php?search=$key$");
         NexusPHP("TCCF", "https://et8.org/torrents.php?search=$key$");
         NexusPHP("U2", "https://u2.dmhy.org/torrents.php?search=$key$");
-        NexusPHP("CMCT", "https://hdcmct.org/torrents.php?search=$key$");
+        // NexusPHP("CMCT", "https://hdcmct.org/torrents.php?search=$key$");
         NexusPHP("MTeam", "https://pt.m-team.cc/torrents.php?search=$key$");
         NexusPHP("MTeam(Adult)", "https://pt.m-team.cc/adult.php?search=$key$");
         NexusPHP("GZTown", "https://pt.gztown.net/torrents.php?search=$key$");
@@ -750,6 +750,7 @@ $(document).ready(function () {
         // 外网站点
         // 下面的“searchtext=$key$"”是分析具体网站的搜索url得到的，记一下，怕以后忘记
         Gazelle("Empornium", "https://www.empornium.me/torrents.php?searchtext=$key$");
+        AvGv("AvGv", "http://avgv.cc/torrents.php?search=$key$");
 
         // BT站点
 
@@ -771,7 +772,7 @@ $(document).ready(function () {
         MoeCat("MoeCat", "https://moecat.best/torrents.php?search=$key$");
         NexusPHP("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
         NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
-        AvGv("AvGv", "http://avgv.cc/torrents.php?search=$key$");
+        
 
     });
 });
