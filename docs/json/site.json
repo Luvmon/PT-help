@@ -340,13 +340,13 @@
     {
       "name": "Emporium",
       "type": "wz",
-      "temple": "Gazelle",
+      "temple": "NexusPHP"
       "search_prefix": "https://www.empornium.me/torrents.php?search="
     },
     {
       "name": "MTV",
       "type": "wz",
-      "temple": "Gazelle",
+      "temple": "NexusPHP"
       "search_prefix": "https://www.morethan.tv/torrents.php?search="
     }
   ],
