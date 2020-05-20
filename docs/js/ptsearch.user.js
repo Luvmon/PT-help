@@ -596,7 +596,7 @@ $(document).ready(function () {
         
         
         // 03.AvGv(爱薇网)，NexusPHP通用模板对该站没用
-        function PTer(site, search_prefix, torrent_table_selector) {
+        function AvGv(site, search_prefix, torrent_table_selector) {
             Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
                 // 只修改了下面一行
                 // var url_prefix = /pt\.whu\.edu\.cn|whupt\.net|hudbt\.hust\.edu\.cn/.test(res.finalUrl) ? "" : (res.finalUrl.match(/(https?:\/\/[^\/]+?\/).+/) || ['', ''])[1];
@@ -717,7 +717,7 @@ $(document).ready(function () {
         MoeCat("MoeCat", "https://moecat.best/torrents.php?search=$key$");
         NexusPHP("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
         NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
-        NexusPHP("AvGv", "http://avgv.cc/torrents.php?search=$key$");
+        PTer("AvGv", "http://avgv.cc/torrents.php?search=$key$");
 
     });
 });
