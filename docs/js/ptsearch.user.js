@@ -486,7 +486,9 @@ $(document).ready(function () {
         }
 
         
-        // 下面是自添加模板，NexusPHP通用模板对下面站点无效
+        // 下面是自建模板，包括国内站点和国外站点
+
+        // 国内站点，NexusPHP通用模板对下面站点无效
         // 01.PTer(猫站)，NexusPHP通用模板对该站显示不出"name"
         function PTer(site, search_prefix, torrent_table_selector) {
             Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
@@ -594,8 +596,8 @@ $(document).ready(function () {
             });
         }
         
-        
-        // 03.AvGv(爱薇网)，NexusPHP通用模板对该站显示不出"name"
+        // 国外站点，新的
+        // 01.AvGv(爱薇网)，NexusPHP通用模板对该站显示不出"name"
         function AvGv(site, search_prefix, torrent_table_selector) {
             Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
                 var url_prefix = /pt\.whu\.edu\.cn|whupt\.net|hudbt\.hust\.edu\.cn/.test(res.finalUrl) ? "" : (res.finalUrl.match(/(https?:\/\/[^\/]+?\/).+/) || ['', ''])[1];
@@ -640,8 +642,79 @@ $(document).ready(function () {
                 }
             });
         }
+
+        // 02.AvistaZ模板，适配于外站
+        function AvistaZ(site, search_prefix) {
+            Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
+                var tr_list = page.find("table.table:first > tbody > tr");
+                writelog("Get " + tr_list.length + " records in Site " + site + ".");
+                for (var i = 0; i < tr_list.length; i++) {
+                    var torrent_data_raw = tr_list.eq(i);
+                    var _tag_name = torrent_data_raw.find("a[href*='.to/torrent/']").first();
+
+                    var _tag_completed = torrent_data_raw.find("td").last();
+                    var _tag_leechers = torrent_data_raw.find("td").eq(-2);
+                    var _tag_seeders = torrent_data_raw.find("td").eq(-3);
+
+                    var _tag_size = torrent_data_raw.find("td").eq(-4).find("span");
+
+                    // torrent_data_raw.find("td").eq(-5)是评论数
+                    var _date = torrent_data_raw.find("td").eq(-6).find("span");
+
+                    table_append({
+                        "site": site,
+                        "name": _tag_name.text(),
+                        "link": _tag_name.attr("href"),
+                        // "pubdate": _date.attr("title"),
+                        "pubdate": Date.parse(_date.attr("title")),
+                        // "pubdate": _tag_date.attr("title"),
+                        // "pubdate": _tag_date.text(),
+                        "size": FileSizetoLength(_tag_size.text()),
+                        "seeders": _tag_seeders.text(),
+                        "leechers": _tag_leechers.text(),
+                        "completed": _tag_completed.text()
+                    });
+                }
+            });
+        }
+
+        // 03.ExoticZ模板，上面的AvistaZ模板对该站显示不出文件大小以及发布时间
+        // TODO：发布时间（搜索页面没找到具体的发布时间，种子详情页面有具体的时间）
+        function ExoticZ(site, search_prefix) { // https://exoticaz.to/
+            Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
+                var tr_list = page.find("table.table:first > tbody > tr");
+                writelog("Get " + tr_list.length + " records in Site " + site + ".");
+                for (var i = 0; i < tr_list.length; i++) {
+                    var torrent_data_raw = tr_list.eq(i);
+                    var _tag_name = torrent_data_raw.find("a[href*='.to/torrent/']").first();
+
+                    var _tag_completed = torrent_data_raw.find("td").last();
+                    var _tag_leechers = torrent_data_raw.find("td").eq(-2);
+                    var _tag_seeders = torrent_data_raw.find("td").eq(-3);
+
+                    // var _tag_size = torrent_data_raw.find("td").eq(-4).find("span");
+                    var _tag_size = torrent_data_raw.find("td").eq(-4)
+
+                    var _date = torrent_data_raw.find("td").eq(-5)// .find("span");
+
+                    table_append({
+                        "site": site,
+                        "name": _tag_name.text(),
+                        "link": _tag_name.attr("href"),
+                        // "pubdate": _date.attr("title"),
+                        "pubdate": Date.parse(_date.attr("title")),
+                        // "pubdate": _tag_date.attr("title"),
+                        // "pubdate": _tag_date.text(),
+                        "size": FileSizetoLength(_tag_size.text()),
+                        "seeders": _tag_seeders.text(),
+                        "leechers": _tag_leechers.text(),
+                        "completed": _tag_completed.text()
+                    });
+                }
+            });
+        }
         
-        // 04.Gazelle模板，适配于外站
+        // 04.Gazelle模板
         // 目前只针对empornium网站搜索，发布时间还待解决
         // TODO: 发布时间（时间可以显示，但是不能按时间排序）
         function Gazelle(site, search_prefix) {
@@ -696,76 +769,72 @@ $(document).ready(function () {
             });
         }
 
-        // 05.AvistaZ模板，适配于外站
-        function AvistaZ(site, search_prefix) {
+        // 05.Gazelle_Group模板
+        // 目前只针对MTV网站搜索，发布时间还待解决
+        // TODO: 发布时间（时间可以显示，但是不能按时间排序）
+        // TODO: group种子的显示（目前只会单个种子的显示，打包的种子不会写）
+        function Gazelle_Group(site, search_prefix) {
             Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
-                var tr_list = page.find("table.table:first > tbody > tr");
+                var tr_list = page.find("#torrent_table tr.torrent");
                 writelog("Get " + tr_list.length + " records in Site " + site + ".");
                 for (var i = 0; i < tr_list.length; i++) {
                     var torrent_data_raw = tr_list.eq(i);
-                    var _tag_name = torrent_data_raw.find("a[href*='.to/torrent/']").first();
+                    // var _tag_name = torrent_data_raw.find("a[href^='/torrents.php?id=']").last();
+                    var _tag_name = torrent_data_raw.find("a.tooltip").last();
 
-                    var _tag_completed = torrent_data_raw.find("td").last();
-                    var _tag_leechers = torrent_data_raw.find("td").eq(-2);
-                    var _tag_seeders = torrent_data_raw.find("td").eq(-3);
+                    // var _name_match = _tag_name.html().match(/<b>(.+?)<br>/);
+                    // var _name = _name_match ? _name_match[1] : _tag_name.text();
 
-                    var _tag_size = torrent_data_raw.find("td").eq(-4).find("span");
+                    // var _tag_date, _date;
+                    // _tag_date = torrent_data_raw.find("td").filter(function () {
+                    //     return time_regex.test($(this).html());
+                    // });
+                    // _date = _tag_date.html().match(time_regex)[1].replace(time_regen_replace, "-$1 $2:");
 
-                    // torrent_data_raw.find("td").eq(-5)是评论数
-                    var _date = torrent_data_raw.find("td").eq(-6).find("span");
+                    // var _tag_size = torrent_data_raw.find("td").filter(function () {
+                    //     return /[kMGT]B$/.test($(this).text());
+                    // });
 
-                    table_append({
-                        "site": site,
-                        "name": _tag_name.text(),
-                        "link": _tag_name.attr("href"),
-                        // "pubdate": _date.attr("title"),
-                        "pubdate": Date.parse(_date.attr("title")),
-                        // "pubdate": _tag_date.attr("title"),
-                        // "pubdate": _tag_date.text(),
-                        "size": FileSizetoLength(_tag_size.text()),
-                        "seeders": _tag_seeders.text(),
-                        "leechers": _tag_leechers.text(),
-                        "completed": _tag_completed.text()
-                    });
-                }
-            });
-        }
+                    var _tag_date = torrent_data_raw.find("td.nobr");
 
-        // 06.ExoticZ模板，上面的AvistaZ模板对该站显示不出文件大小以及发布时间
-        // TODO：发布时间
-        function ExoticZ(site, search_prefix) { // https://exoticaz.to/
-            Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
-                var tr_list = page.find("table.table:first > tbody > tr");
-                writelog("Get " + tr_list.length + " records in Site " + site + ".");
-                for (var i = 0; i < tr_list.length; i++) {
-                    var torrent_data_raw = tr_list.eq(i);
-                    var _tag_name = torrent_data_raw.find("a[href*='.to/torrent/']").first();
+                    // var _tag_size = _tag_date.next("td");
+                    // var _tag_size = torrent_data_raw.find("td.number_column")
 
-                    var _tag_completed = torrent_data_raw.find("td").last();
-                    var _tag_leechers = torrent_data_raw.find("td").eq(-2);
-                    var _tag_seeders = torrent_data_raw.find("td").eq(-3);
+                    // var _tag_completed = _tag_size.next("td");
+                    // var _tag_seeders = _tag_completed.next("td");
+                    // var _tag_leechers = _tag_seeders.next("td");
+
+                    var _tag_leechers = torrent_data_raw.find("td").last();
+                    var _tag_seeders = torrent_data_raw.find("td").eq(-2);
+                    var _tag_completed = torrent_data_raw.find("td").eq(-3);
 
                     // var _tag_size = torrent_data_raw.find("td").eq(-4).find("span");
                     var _tag_size = torrent_data_raw.find("td").eq(-4)
 
-                    var _date = torrent_data_raw.find("td").eq(-5)// .find("span");
+                    // var _tag_seeders = torrent_data_raw.find("a[href$='toseeders=1']");
+                    // var _tag_leechers = torrent_data_raw.find("a[href$='todlers=1']");
+
 
                     table_append({
                         "site": site,
                         "name": _tag_name.text(),
-                        "link": _tag_name.attr("href"),
-                        // "pubdate": _date.attr("title"),
-                        "pubdate": Date.parse(_date.attr("title")),
-                        // "pubdate": _tag_date.attr("title"),
+                        "link": "https://www.morethan.tv/" + _tag_name.attr("href"),
+                        // "pubdate": Date.parse(_date),
+                        "pubdate": _tag_date.find("span").attr("title"),
                         // "pubdate": _tag_date.text(),
-                        "size": FileSizetoLength(_tag_size.text()),
+                        "size": FileSizetoLength(_tag_size.text().replace(',', '')),
                         "seeders": _tag_seeders.text(),
                         "leechers": _tag_leechers.text(),
                         "completed": _tag_completed.text()
+                        // "seeders": _tag_seeders.text().replace(',', '') || 0,
+                        // "leechers": _tag_leechers.text().replace(',', '') || 0,
+                        // "completed": (_tag_completed.text().match(/\d+/) || ["0"])[0].replace(',', '')
                     });
                 }
             });
         }
+
+        
         
 
         // 开始各站点遍历
@@ -821,6 +890,7 @@ $(document).ready(function () {
         // 外网站点
         // 下面的“searchtext=$key$"”是分析具体网站的搜索url得到的，记一下，怕以后忘记
         Gazelle("Empornium", "https://www.empornium.me/torrents.php?searchtext=$key$");
+        Gazelle_Group("MTV", "https://www.morethan.tv/torrents.php?searchstr=$key$");
         AvGv("AvGv", "http://avgv.cc/torrents.php?search=$key$");
         AvistaZ("AvistaZ", "https://avistaz.to/torrents?search=$key$");
         AvistaZ("PrivateHD", "https://privatehd.to/torrents?search=$key$");
