@@ -335,12 +335,6 @@
       "type": "gw",
       "temple": "NexusPHP",
       "search_prefix": "https://hdfans.org/torrents.php?search="
-    },
-    {
-      "name": "AvGv",
-      "type": "gw",
-      "temple": "NexusPHP",
-      "search_prefix": "http://avgv.cc/torrents.php?search="
     }
   ],
   "jyw": [
@@ -399,8 +393,7 @@
     "PTSBAO",
     "MoeCat",
     "LeagueHD",
-    "HDFans",
-    "AvGv"
+    "HDFans"
   ],
   "wz": [],
   "bt": [],
