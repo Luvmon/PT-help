@@ -333,7 +333,7 @@
     },
     {
       "name": "AvGv",
-      "type": "wz",
+      "type": "gw",
       "temple": "NexusPHP",
       "search_prefix": "http://avgv.cc/torrents.php?search="
     },
@@ -399,10 +399,10 @@
     "PTSBAO",
     "MoeCat",
     "LeagueHD",
-    "HDFans"
+    "HDFans",
+    "AvGv"
   ],
   "wz": [
-    "AvGv",
     "Empornium"
   ],
   "bt": [],
