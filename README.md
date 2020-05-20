@@ -1,5 +1,7 @@
 ### 更新日志：
 
+2020.05.20 新增AvGv，以及适用于该站点的模板；新增Empornium站点模板（发布时间不会写，待解决）
+
 2020.05.05 新增HDFans
 
 2020.05.02 新增LeagueHD(柠檬)，修改HDCity模板中"seeders"、"leechers"和"completed"的显示问题
