@@ -641,6 +641,60 @@ $(document).ready(function () {
             });
         }
         
+        // 04.Gazelle模板，适配于外站
+        // 目前只针对empornium网站搜索，发布时间还待解决
+        // TODO: "pubdate"(发布时间)
+        function Gazelle(site, search_prefix) {
+            Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
+                var tr_list = page.find("#torrent_table tr.torrent");
+                writelog("Get " + tr_list.length + " records in Site " + site + ".");
+                for (var i = 0; i < tr_list.length; i++) {
+                    var torrent_data_raw = tr_list.eq(i);
+                    var _tag_name = torrent_data_raw.find("a[href^='/torrents.php?id']");
+
+                    // var _name_match = _tag_name.html().match(/<b>(.+?)<br>/);
+                    // var _name = _name_match ? _name_match[1] : _tag_name.text();
+
+                    // var _tag_date, _date;
+                    // _tag_date = torrent_data_raw.find("td").filter(function () {
+                    //     return time_regex.test($(this).html());
+                    // });
+                    // _date = _tag_date.html().match(time_regex)[1].replace(time_regen_replace, "-$1 $2:");
+
+                    // var _tag_size = torrent_data_raw.find("td").filter(function () {
+                    //     return /[kMGT]B$/.test($(this).text());
+                    // });
+
+                    var _tag_data = torrent_data_raw.find("td.nobr").first();
+
+                    var _tag_size = _tag_data.next("td");
+
+                    var _tag_completed = _tag_size.next("td");
+                    var _tag_seeders = _tag_completed.next("td");
+                    var _tag_leechers = _tag_seeders.next("td");
+
+                    // var _tag_seeders = torrent_data_raw.find("a[href$='toseeders=1']");
+                    // var _tag_leechers = torrent_data_raw.find("a[href$='todlers=1']");
+
+
+                    table_append({
+                        "site": site,
+                        "name": _tag_name.text(),
+                        "link": "https://www.empornium.me" + _tag_name.attr("href"),
+                        // "pubdate": Date.parse(_date),
+                        "pubdate": _tag_data.attr("title"),
+                        "size": FileSizetoLength(_tag_size.text()),
+                        "seeders": _tag_seeders.text(),
+                        "leechers": _tag_leechers.text(),
+                        "completed": _tag_completed.text()
+                        // "seeders": _tag_seeders.text().replace(',', '') || 0,
+                        // "leechers": _tag_leechers.text().replace(',', '') || 0,
+                        // "completed": (_tag_completed.text().match(/\d+/) || ["0"])[0].replace(',', '')
+                    });
+                }
+            });
+        }
+        
         
 
         // 开始各站点遍历
@@ -694,6 +748,8 @@ $(document).ready(function () {
         CCFBits("CCFBits", "http://ccfbits.org/browse.php?search=$key$");
 
         // 外网站点
+        // 下面的“searchtext=$key$"”是分析具体网站的搜索url得到的，记一下，怕以后忘记
+        Gazelle("Empornium", "https://www.empornium.me/torrents.php?searchtext=$key$");
 
         // BT站点
 
