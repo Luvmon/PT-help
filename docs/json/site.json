@@ -338,9 +338,9 @@
       "search_prefix": "http://avgv.cc/torrents.php?search="
     },
     {
-      "name": "Emporium",
+      "name": "Empornium",
       "type": "wz",
-      "temple": "Gazelle"
+      "temple": "Gazelle",
       "search_prefix": "https://www.empornium.me/torrents.php?search="
     }
   ],
@@ -403,7 +403,7 @@
   ],
   "wz": [
     "AvGv",
-    "Emporium"
+    "Empornium"
   ],
   "bt": [],
   "disable": [
