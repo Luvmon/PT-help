@@ -181,12 +181,6 @@
       "search_prefix": "https://u2.dmhy.org/torrents.php?search="
     },
     {
-      "name": "CMCT",
-      "type": "gw",
-      "temple": "NexusPHP",
-      "search_prefix": "https://hdcmct.org/torrents.php?search="
-    },
-    {
       "name": "MTeam",
       "type": "gw",
       "temple": "NexusPHP",
@@ -374,7 +368,6 @@
     "KeepFrds",
     "TCCF",
     "U2",
-    "CMCT",
     "MTeam",
     "MTeam(Adult)",
     "GZTown",
@@ -405,7 +398,6 @@
   "wz": [],
   "bt": [],
   "disable": [
-    "CMCT",
     "HIT",
     "CUGB",
     "Antsoul"
