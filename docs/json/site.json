@@ -19,7 +19,8 @@
       "CCFBits",
       "Other",
       "None",
-      "Gazelle"
+      "Gazelle",
+      "AvistaZ"
     ]
   },
   "site": [
@@ -342,6 +343,30 @@
       "type": "wz",
       "temple": "Gazelle",
       "search_prefix": "https://www.empornium.me/torrents.php?search="
+    },
+    {
+      "name": "MTV",
+      "type": "wz",
+      "temple": "Gazelle",
+      "search_prefix": "https://www.morethan.tv/torrents.php?search="
+    },
+    {
+      "name": "AvistaZ",
+      "type": "wz",
+      "temple": "AvistaZ",
+      "search_prefix": "https://avistaz.to/torrents?search="
+    },
+    {
+      "name": "PrivateHD",
+      "type": "wz",
+      "temple": "AvistaZ",
+      "search_prefix": "https://privatehd.to/torrents?search="
+    },
+    {
+      "name": "CinemaZ",
+      "type": "wz",
+      "temple": "AvistaZ",
+      "search_prefix": "https://cinemaz.to/torrents?search="
     }
   ],
   "jyw": [
@@ -403,7 +428,11 @@
   ],
   "wz": [
     "AvGv",
-    "Empornium"
+    "Empornium",
+    "MTV",
+    "AvistaZ",
+    "PrivateHD",
+    "CinemaZ"
   ],
   "bt": [],
   "disable": [
