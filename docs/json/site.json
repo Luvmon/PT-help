@@ -340,7 +340,7 @@
     {
       "name": "Emporium",
       "type": "wz",
-      "temple": "Gazelle",
+      "temple": "NexusPHP",
       "search_prefix": "https://www.empornium.me/torrents.php?search="
     }
   ],
@@ -403,23 +403,7 @@
     "AvGv"
   ],
   "wz": [
-    "Empornium",
-    "JPopsuki",
-    "MTV",
-    "GazelleGames",
-    "AHD",
-    "Redacted",
-    "Nebulance",
-    "MAM",
-    "UHDBits",
-    "ICE",
-    "HDForever",
-    "IPT",
-    "AsianCinema",
-    "AvistaZ",
-    "PrivateHD",
-    "CinemaZ",
-    "ExoticaZ"
+    "Empornium"
   ],
   "bt": [],
   "disable": [
