@@ -367,6 +367,12 @@
       "type": "wz",
       "temple": "AvistaZ",
       "search_prefix": "https://cinemaz.to/torrents?search="
+    },
+    {
+      "name": "ExoticZ",
+      "type": "wz",
+      "temple": "AvistaZ",
+      "search_prefix": "https://exoticaz.to/torrents?search="
     }
   ],
   "jyw": [
@@ -432,7 +438,8 @@
     "MTV",
     "AvistaZ",
     "PrivateHD",
-    "CinemaZ"
+    "CinemaZ",
+    "ExoticZ"
   ],
   "bt": [],
   "disable": [
