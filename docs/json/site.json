@@ -336,6 +336,12 @@
       "type": "wz",
       "temple": "NexusPHP",
       "search_prefix": "http://avgv.cc/torrents.php?search="
+    },
+    {
+      "name": "Emporium",
+      "type": "wz",
+      "temple": "Gazelle"
+      "search_prefix": "https://www.empornium.me/torrents.php?search="
     }
   ],
   "jyw": [
@@ -396,7 +402,8 @@
     "HDFans"
   ],
   "wz": [
-    "AvGv"
+    "AvGv",
+    "Emporium"
   ],
   "bt": [],
   "disable": [
