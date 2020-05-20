@@ -595,10 +595,10 @@ $(document).ready(function () {
         }
         
         
-        // 03.AvGv(爱薇网)，NexusPHP通用模板对该站没用
+        // 03.AvGv(爱薇网)，NexusPHP通用模板对该站显示不出"name"
         function AvGv(site, search_prefix, torrent_table_selector) {
             Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
-                // var url_prefix = /pt\.whu\.edu\.cn|whupt\.net|hudbt\.hust\.edu\.cn/.test(res.finalUrl) ? "" : (res.finalUrl.match(/(https?:\/\/[^\/]+?\/).+/) || ['', ''])[1];
+                var url_prefix = /pt\.whu\.edu\.cn|whupt\.net|hudbt\.hust\.edu\.cn/.test(res.finalUrl) ? "" : (res.finalUrl.match(/(https?:\/\/[^\/]+?\/).+/) || ['', ''])[1];
                 writelog("Using The normal parser for NexusPHP in Site: " + site);
                 if (/没有种子|No [Tt]orrents?|Your search did not match anything|用准确的关键字重试/.test(res.responseText)) {
                     writelog("No any torrent find in Site " + site + ".");
@@ -610,7 +610,7 @@ $(document).ready(function () {
                     var torrent_data_raw = tr_list.eq(i);
                     // AvGv模板相对于NexusPHP原始模板只修改了下面一行
                     // var _tag_name = torrent_data_raw.find("a[href*='hit']").first();
-                    var _tag_name = torrent_data_raw.find("a[href*='hit']").next();
+                    var _tag_name = torrent_data_raw.find("a[href*='hit']").eq(1);
 
                     // 确定日期tag，因用户在站点设置中配置及站点优惠信息的情况的存在，此处dom结构会有不同
                     // 此外多数站点对于 seeders, leechers, completed 没有额外的定位信息，故要依赖于正确的日期tag
@@ -715,7 +715,7 @@ $(document).ready(function () {
         MoeCat("MoeCat", "https://moecat.best/torrents.php?search=$key$");
         NexusPHP("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
         NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
-        NexusPHP("AvGv", "http://avgv.cc/torrents.php?search=$key$");
+        AvGv("AvGv", "http://avgv.cc/torrents.php?search=$key$");
 
     });
 });
