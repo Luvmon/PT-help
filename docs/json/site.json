@@ -195,10 +195,10 @@
       "search_prefix": "https://pt.m-team.cc/adult.php?search="
     },
     {
-      "name": "GZTown",
+      "name": "DiscFan",
       "type": "gw",
       "temple": "NexusPHP",
-      "search_prefix": "https://pt.gztown.net/torrents.php?search="
+      "search_prefix": "https://discfan.net/torrents.php?search="
     },
     {
       "name": "TTG(Media)",
@@ -408,7 +408,7 @@
     "U2",
     "MTeam",
     "MTeam(Adult)",
-    "GZTown",
+    "DiscFan",
     "TTG(Media)",
     "TTG(Gamez)",
     "HDStreet",
