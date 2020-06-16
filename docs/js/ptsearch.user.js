@@ -871,7 +871,7 @@ $(document).ready(function () {
         // NexusPHP("CMCT", "https://hdcmct.org/torrents.php?search=$key$");
         NexusPHP("MTeam", "https://pt.m-team.cc/torrents.php?search=$key$");
         NexusPHP("MTeam(Adult)", "https://pt.m-team.cc/adult.php?search=$key$");
-        NexusPHP("GZTown", "https://pt.gztown.net/torrents.php?search=$key$");
+        NexusPHP("DiscFan", "https://discfan.net/torrents.php?search=$key$");
         NexusPHP("HD4FANS", "https://pt.hd4fans.org/torrents.php?search=$key$");
         NexusPHP("TLFBits", "http://pt.eastgame.org/torrents.php?search=$key$");
         NexusPHP("BTSCHOOL", "http://pt.btschool.club/torrents.php?search=$key$");
