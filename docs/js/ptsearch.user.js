@@ -596,6 +596,52 @@ $(document).ready(function () {
             });
         }
         
+        // 03.HaiDan(海胆之家)，NexusPHP通用模板对该站显示不出种子完成人数
+        function HaiDan(site, search_prefix, torrent_table_selector) {
+            Get_Search_Page(site, search_prefix, function (res, doc, body, page) {
+                var url_prefix = /pt\.whu\.edu\.cn|whupt\.net|hudbt\.hust\.edu\.cn/.test(res.finalUrl) ? "" : (res.finalUrl.match(/(https?:\/\/[^\/]+?\/).+/) || ['', ''])[1];
+                writelog("Using The normal parser for NexusPHP in Site: " + site);
+                if (/没有种子|No [Tt]orrents?|Your search did not match anything|用准确的关键字重试/.test(res.responseText)) {
+                    writelog("No any torrent find in Site " + site + ".");
+                    return;
+                }
+                var tr_list = page.find(torrent_table_selector || "table.torrents:last > tbody > tr:gt(0)");
+                writelog("Get " + tr_list.length + " records in Site " + site + ".");
+                for (var i = 0; i < tr_list.length; i++) {
+                    var torrent_data_raw = tr_list.eq(i);
+                    var _tag_name = torrent_data_raw.find("a[href*='hit']").first();
+
+                    // 确定日期tag，因用户在站点设置中配置及站点优惠信息的情况的存在，此处dom结构会有不同
+                    // 此外多数站点对于 seeders, leechers, completed 没有额外的定位信息，故要依赖于正确的日期tag
+                    var _tag_date, _date = "0000-00-00 00:00:00";
+                    _tag_date = torrent_data_raw.find("> td").filter(function () {
+                        return /(\d{4}-\d{2}-\d{2}[^\d]+?\d{2}:\d{2}:\d{2})|[分时天月年]/.test($(this).html());
+                    }).last();
+                    if (_tag_date && _tag_date.html()) {
+                        _date = (_tag_date.html().match(time_regex) || ["", "0000-00-00 00:00:00"])[1].replace(time_regen_replace, "-$1 $2:");
+                    }
+
+                    var _tag_size = _tag_date.next("td");
+                    var _tag_seeders = _tag_size.next("td");  // torrent_data_raw.find("a[href$='#seeders']")
+                    var _tag_leechers = _tag_seeders.next("td");  // torrent_data_raw.find("a[href$='#leechers']")
+                    // HaiDan模板相对于NexusPHP原始模板只修改了下面一行
+                    // var _tag_completed = _tag_leechers.next("td");  // torrent_data_raw.find("a[href^='viewsnatches']")
+                    var _tag_completed = torrent_data_raw.find("a[href^='viewsnatches']")
+
+                    table_append({
+                        "site": site,
+                        "name": _tag_name.attr("title") || _tag_name.text(),
+                        "link": url_prefix + _tag_name.attr("href"),
+                        "pubdate": Date.parse(_date),
+                        "size": FileSizetoLength(_tag_size.text()),
+                        "seeders": _tag_seeders.text().replace(',', '') || 0,  // 获取不到正常信息的时候置0
+                        "leechers": _tag_leechers.text().replace(',', '') || 0,
+                        "completed": _tag_completed.text().replace(',', '') || 0
+                    });
+                }
+            });
+        }
+        
         // 国外站点，新的
         // 01.AvGv(爱薇网)，NexusPHP通用模板对该站显示不出"name"
         function AvGv(site, search_prefix, torrent_table_selector) {
@@ -917,7 +963,7 @@ $(document).ready(function () {
         MoeCat("MoeCat", "https://moecat.best/torrents.php?search=$key$");
         NexusPHP("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
         NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
-        NexusPHP("HAIDAN", "https://www.haidan.video/torrents.php?search=$key$");
+        HaiDan("HaiDan", "https://www.haidan.video/torrents.php?search=$key$");
         
 
     });
