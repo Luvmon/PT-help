@@ -1,5 +1,9 @@
 ### 更新日志：
 
+2020.06.19 新增HaiDan(海胆之家)，以及适用于该站点的模板 
+
+2020.06.16 修改GZTown为DiscFan 
+
 2020.05.20  
 1、新增AvGv，以及适用于该站点的模板  
 2、新增AvistaZ系列站点及模板，AvistaZ、PrivateHD和CinemaZ均正常显示，ExoticZ发布时间不会写  
