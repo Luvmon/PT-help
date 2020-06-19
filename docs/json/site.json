@@ -327,6 +327,12 @@
       "search_prefix": "https://leaguehd.com/torrents.php?search="
     },
     {
+      "name": "HAIDAN",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://www.haidan.video/torrents.php?search="
+    },
+    {
       "name": "HDFans",
       "type": "gw",
       "temple": "NexusPHP",
@@ -430,6 +436,7 @@
     "PTSBAO",
     "MoeCat",
     "LeagueHD",
+    "HAIDAN",
     "HDFans"
   ],
   "wz": [
