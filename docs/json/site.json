@@ -327,7 +327,7 @@
       "search_prefix": "https://leaguehd.com/torrents.php?search="
     },
     {
-      "name": "HAIDAN",
+      "name": "HaiDan",
       "type": "gw",
       "temple": "NexusPHP",
       "search_prefix": "https://www.haidan.video/torrents.php?search="
@@ -436,7 +436,7 @@
     "PTSBAO",
     "MoeCat",
     "LeagueHD",
-    "HAIDAN",
+    "HaiDan",
     "HDFans"
   ],
   "wz": [
