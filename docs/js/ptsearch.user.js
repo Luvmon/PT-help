@@ -964,6 +964,7 @@ $(document).ready(function () {
         NexusPHP("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
         NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
         HaiDan("HaiDan", "https://www.haidan.video/torrents.php?search=$key$");
+        NexusPHP("BeiTai", "https://www.beitai.pt/torrents.php?search=$key$");
         
 
     });
