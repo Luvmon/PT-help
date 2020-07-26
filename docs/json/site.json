@@ -339,6 +339,12 @@
       "search_prefix": "https://hdfans.org/torrents.php?search="
     },
     {
+      "name": "BeiTai",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://www.beitai.pt/torrents.php?search="
+    },
+    {
       "name": "AvGv",
       "type": "wz",
       "temple": "NexusPHP",
@@ -437,7 +443,8 @@
     "MoeCat",
     "LeagueHD",
     "HaiDan",
-    "HDFans"
+    "HDFans",
+    "BeiTai"
   ],
   "wz": [
     "AvGv",
