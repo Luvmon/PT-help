@@ -391,6 +391,12 @@
       "type": "wz",
       "temple": "AvistaZ",
       "search_prefix": "https://exoticaz.to/torrents?search="
+    },
+    {
+      "name": "RetroFlix",
+      "type": "wz",
+      "temple": "NexusPHP",
+      "search_prefix": "https://retroflix.club/torrents1.php?search="
     }
   ],
   "jyw": [
@@ -460,7 +466,8 @@
     "AvistaZ",
     "PrivateHD",
     "CinemaZ",
-    "ExoticZ"
+    "ExoticZ",
+    "RetroFlix"
   ],
   "bt": [],
   "disable": [
