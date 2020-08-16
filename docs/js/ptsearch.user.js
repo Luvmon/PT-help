@@ -942,6 +942,7 @@ $(document).ready(function () {
         AvistaZ("PrivateHD", "https://privatehd.to/torrents?search=$key$");
         AvistaZ("CinemaZ", "https://cinemaz.to/torrents?search=$key$");
         ExoticZ("ExoticZ", "https://exoticaz.to/torrents?search=$key$");
+        NexusPHP("RetroFlix", "https://retroflix.club/torrents1.php?search=$key$");
 
         // BT站点
 
