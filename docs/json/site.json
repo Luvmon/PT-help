@@ -351,6 +351,12 @@
       "search_prefix": "https://www.beitai.pt/torrents.php?search="
     },
     {
+      "name": "YingK",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://yingk.com/torrents.php?search="
+    },
+    {
       "name": "AvGv",
       "type": "wz",
       "temple": "NexusPHP",
@@ -457,7 +463,8 @@
     "LeagueHD(Music)",
     "HaiDan",
     "HDFans",
-    "BeiTai"
+    "BeiTai",
+    "YingK"
   ],
   "wz": [
     "AvGv",
