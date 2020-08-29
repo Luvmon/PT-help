@@ -1012,7 +1012,7 @@ $(document).ready(function () {
         NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
         HaiDan("HaiDan", "https://www.haidan.video/torrents.php?search=$key$");
         NexusPHP("BeiTai", "https://www.beitai.pt/torrents.php?search=$key$");
-        HDStreet("YingK", "https://yingk.com/torrents.php?search=$key$");
+        MoeCat("YingK", "https://yingk.com/torrents.php?search=$key$");
         
 
     });
