@@ -988,6 +988,7 @@ $(document).ready(function () {
         AvistaZ("CinemaZ", "https://cinemaz.to/torrents?search=$key$");
         ExoticZ("ExoticZ", "https://exoticaz.to/torrents?search=$key$");
         RetroFlix("RetroFlix", "https://retroflix.club/torrents1.php?search=$key$");
+        NexusPHP("3ChangTrai", "https://3changtrai.com/torrents.php?search=$key$");
 
         // BT站点
 
@@ -1009,10 +1010,12 @@ $(document).ready(function () {
         MoeCat("MoeCat", "https://moecat.best/torrents.php?search=$key$");
         NexusPHP("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
         NexusPHP("LeagueHD(Music)", "https://leaguehd.com/torrents.php?music=yes&search=$key$");
+        NexusPHP("LeagueHD(Anime)", "https://leaguehd.com/torrents.php?animate=yes&search=$key$");
         NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
         HaiDan("HaiDan", "https://www.haidan.video/torrents.php?search=$key$");
         NexusPHP("BeiTai", "https://www.beitai.pt/torrents.php?search=$key$");
         MoeCat("YingK", "https://yingk.com/torrents.php?search=$key$");
+        NexusPHP("NicePT", "https://www.nicept.net/torrents.php?search=$key$");
         
 
     });
