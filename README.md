@@ -1,9 +1,9 @@
 ### 更新日志：
 
 2020.09.14  
-1、新增LeagueHD(Anime)，LeagueHD新增动漫分区 
-2、新增NicePT（老师站）
-3、新增3ChangTrai（一个越南站）
+1、新增LeagueHD(Anime)，LeagueHD新增动漫分区  
+2、新增NicePT（老师站）  
+3、新增3ChangTrai（一个越南站）  
 
 2020.08.29 新增YingK(影客)
 
