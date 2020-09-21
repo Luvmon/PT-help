@@ -1,5 +1,7 @@
 ### 更新日志：
 
+2020.09.21 新增HDLab(海底捞)
+
 2020.09.14  
 1、新增LeagueHD(Anime)，LeagueHD新增动漫分区  
 2、新增NicePT（老师站）  
