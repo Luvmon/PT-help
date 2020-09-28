@@ -1016,7 +1016,7 @@ $(document).ready(function () {
         NexusPHP("BeiTai", "https://www.beitai.pt/torrents.php?search=$key$");
         MoeCat("YingK", "https://yingk.com/torrents.php?search=$key$");
         NexusPHP("NicePT", "https://www.nicept.net/torrents.php?search=$key$");
-        NexusPHP("HDLab", "https://hdlab.site/torrents.php?search=$key$");
+        // NexusPHP("HDLab", "https://hdlab.site/torrents.php?search=$key$");
         
 
     });
