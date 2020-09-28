@@ -369,12 +369,6 @@
       "search_prefix": "https://www.nicept.net/torrents.php?search="
     },
     {
-      "name": "HDLab",
-      "type": "gw",
-      "temple": "NexusPHP",
-      "search_prefix": "https://hdlab.site/torrents.php?search="
-    },
-    {
       "name": "AvGv",
       "type": "wz",
       "temple": "NexusPHP",
@@ -490,8 +484,7 @@
     "HDFans",
     "BeiTai",
     "YingK",
-    "NicePT",
-    "HDLab"
+    "NicePT"
   ],
   "wz": [
     "AvGv",
