@@ -279,6 +279,12 @@
       "search_prefix": "https://www.pthome.net/torrents.php?search="
     },
     {
+      "name": "PTHome(eBook)",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://www.pthome.net/live.php?search="
+    },
+    {
       "name": "HDDolby",
       "type": "gw",
       "temple": "NexusPHP",
@@ -470,6 +476,7 @@
     "HDArea",
     "PTer",
     "PTHome",
+    "PTHome(eBook)",
     "HDDolby",
     "SoulVoice",
     "SoulVoice(eBook)",
