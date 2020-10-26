@@ -1,5 +1,7 @@
 ### 更新日志：
 
+2020.10.26 新增PTHome(eBook)  
+
 2020.09.28  
 1、删除HDLab(海底捞)  
 2、主目录下新增Jpopsuki站点的css文件：jpopsuki.css  
