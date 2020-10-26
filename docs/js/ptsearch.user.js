@@ -1001,6 +1001,7 @@ $(document).ready(function () {
         NexusPHP("HDArea", "https://www.hdarea.co/torrents.php?search=$key$");
         PTer("PTer", "https://pterclub.com/torrents.php?search=$key$");
         NexusPHP("PTHome", "https://www.pthome.net/torrents.php?search=$key$");
+        NexusPHP("PTHome(eBook)", "https://www.pthome.net/live.php?search=$key$");
         NexusPHP("HDDolby", "https://www.hddolby.com/torrents.php?search=$key$");
         NexusPHP("SoulVoice", "https://pt.soulvoice.club/torrents.php?search=$key$");
         NexusPHP("SoulVoice(eBook)", "https://pt.soulvoice.club/live.php?search=$key$");
