@@ -333,18 +333,6 @@
       "search_prefix": "https://leaguehd.com/torrents.php?search="
     },
     {
-      "name": "LeagueHD(Music)",
-      "type": "gw",
-      "temple": "NexusPHP",
-      "search_prefix": "https://leaguehd.com/torrents.php?music=yes&search="
-    },
-    {
-      "name": "LeagueHD(Anime)",
-      "type": "gw",
-      "temple": "NexusPHP",
-      "search_prefix": "https://leaguehd.com/torrents.php?animate=yes&search="
-    },
-    {
       "name": "HaiDan",
       "type": "gw",
       "temple": "NexusPHP",
@@ -485,8 +473,6 @@
     "PTSBAO",
     "MoeCat",
     "LeagueHD",
-    "LeagueHD(Music)",
-    "LeagueHD(Anime)",
     "HaiDan",
     "HDFans",
     "BeiTai",
