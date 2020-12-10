@@ -657,7 +657,7 @@ $(document).ready(function () {
                     var torrent_data_raw = tr_list.eq(i);
                     // LeagueHD模板相对于NexusPHP原始模板只修改了下面一行
                     // var _tag_name = torrent_data_raw.find("a[href*='hit']").first();
-                    var _tag_name = torrent_data_raw.find("a[href*='details']").second();
+                    var _tag_name = torrent_data_raw.find("a[href*='details_']").first();
                     
                     // 确定日期tag，因用户在站点设置中配置及站点优惠信息的情况的存在，此处dom结构会有不同
                     // 此外多数站点对于 seeders, leechers, completed 没有额外的定位信息，故要依赖于正确的日期tag
