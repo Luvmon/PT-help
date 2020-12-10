@@ -1009,9 +1009,9 @@ $(document).ready(function () {
         NexusPHP("SSD", "https://springsunday.net/torrents.php?search=$key$");
         NexusPHP("PTSBAO", "https://ptsbao.club/torrents.php?search=$key$");
         MoeCat("MoeCat", "https://moecat.best/torrents.php?search=$key$");
-        NexusPHP("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
-        NexusPHP("LeagueHD(Music)", "https://leaguehd.com/torrents.php?music=yes&search=$key$");
-        NexusPHP("LeagueHD(Anime)", "https://leaguehd.com/torrents.php?animate=yes&search=$key$");
+        PTer("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
+        // NexusPHP("LeagueHD(Music)", "https://leaguehd.com/torrents.php?music=yes&search=$key$");
+        // NexusPHP("LeagueHD(Anime)", "https://leaguehd.com/torrents.php?animate=yes&search=$key$");
         NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
         HaiDan("HaiDan", "https://www.haidan.video/torrents.php?search=$key$");
         NexusPHP("BeiTai", "https://www.beitai.pt/torrents.php?search=$key$");
