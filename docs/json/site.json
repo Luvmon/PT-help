@@ -363,6 +363,18 @@
       "search_prefix": "https://www.nicept.net/torrents.php?search="
     },
     {
+      "name": "HaitangPT",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://www.1468.top/torrents.php?search="
+    },
+    {
+      "name": "HaitangPT(Live)",
+      "type": "gw",
+      "temple": "NexusPHP",
+      "search_prefix": "https://www.1468.top/live.php?search="
+    },
+    {
       "name": "AvGv",
       "type": "wz",
       "temple": "NexusPHP",
@@ -477,7 +489,9 @@
     "HDFans",
     "BeiTai",
     "YingK",
-    "NicePT"
+    "NicePT",
+    "HaitangPT",
+    "HaitangPT(Live)"
   ],
   "wz": [
     "AvGv",
