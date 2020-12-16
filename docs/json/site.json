@@ -330,7 +330,7 @@
       "name": "LeagueHD",
       "type": "gw",
       "temple": "NexusPHP",
-      "search_prefix": "https://leaguehd.com/torrents.php?search="
+      "search_prefix": "https://leaguehd.com/torrents_movie.php?search="
     },
     {
       "name": "HaiDan",
