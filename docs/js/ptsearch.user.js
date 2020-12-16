@@ -1055,7 +1055,7 @@ $(document).ready(function () {
         NexusPHP("SSD", "https://springsunday.net/torrents.php?search=$key$");
         NexusPHP("PTSBAO", "https://ptsbao.club/torrents.php?search=$key$");
         MoeCat("MoeCat", "https://moecat.best/torrents.php?search=$key$");
-        LeagueHD("LeagueHD", "https://leaguehd.com/torrents.php?search=$key$");
+        LeagueHD("LeagueHD", "https://leaguehd.com/torrents_movie.php?search=$key$");
         // NexusPHP("LeagueHD(Music)", "https://leaguehd.com/torrents.php?music=yes&search=$key$");
         // NexusPHP("LeagueHD(Anime)", "https://leaguehd.com/torrents.php?animate=yes&search=$key$");
         NexusPHP("HDFans", "https://hdfans.org/torrents.php?search=$key$");
