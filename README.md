@@ -1,5 +1,7 @@
 ### 更新日志：
 
+2020.12.18 修改海棠PT域名  
+
 2020.12.15 新增HaitangPT（海棠PT）、HaitangPT(Live)（海棠PT广播剧）  
 
 2020.10.26 新增PTHome(eBook)  
