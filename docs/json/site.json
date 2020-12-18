@@ -366,13 +366,13 @@
       "name": "HaitangPT",
       "type": "gw",
       "temple": "NexusPHP",
-      "search_prefix": "https://www.1468.top/torrents.php?search="
+      "search_prefix": "https://www.htpt.cc/torrents.php?search="
     },
     {
       "name": "HaitangPT(Live)",
       "type": "gw",
       "temple": "NexusPHP",
-      "search_prefix": "https://www.1468.top/live.php?search="
+      "search_prefix": "https://www.htpt.cc/live.php?search="
     },
     {
       "name": "AvGv",
