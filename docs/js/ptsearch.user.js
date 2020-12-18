@@ -1064,8 +1064,8 @@ $(document).ready(function () {
         MoeCat("YingK", "https://yingk.com/torrents.php?search=$key$");
         NexusPHP("NicePT", "https://www.nicept.net/torrents.php?search=$key$");
         // NexusPHP("HDLab", "https://hdlab.site/torrents.php?search=$key$");
-        NexusPHP("HaitangPT", "https://www.1468.top/torrents.php?search=$key$");
-        NexusPHP("HaitangPT(Live)", "https://www.1468.top/live.php?search=$key$");
+        NexusPHP("HaitangPT", "https://www.htpt.cc/torrents.php?search=$key$");
+        NexusPHP("HaitangPT(Live)", "https://www.htpt.cc/live.php?search=$key$");
         
 
     });
